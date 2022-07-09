@@ -1,19 +1,4 @@
-﻿// -- Example 2 --
-ChoreDataAccess db = new ChoreDataAccess();
-await db.CreateUserAsync(new UserModel() { FirstName = "Vieriu", LastName = "Alexandru" });
-
-var users = await db.GetAllUsersAsync();
-var chore = new ChoreModel()
-{
-    AssignedTo = users.First(),
-    ChoreText = "Mow the Lawn",
-    FrequencyInDays = 7
-};
-
-await db.CreateChoreAsync(chore);
-
-
-// --- Example 1 ---
+﻿// --- Example 1 ---
 // string connectionString = "mongodb://localhost:27017";
 // string databaseName = "simple_db";
 // string collectionName = "people";
@@ -30,3 +15,25 @@ await db.CreateChoreAsync(chore);
 // foreach (var result in results.ToList())
 //     System.Console.WriteLine($"{result.Id}: {result.FirstName} {result.LastName}");
 
+
+// -- Example 2 --
+
+UserRepository userRepo = new();
+BookRepository bookRepo = new();
+
+await userRepo.CreateUserAsync(new UserModel() { FirstName = "Vieriu", LastName = "Alexandru" });
+var users = await userRepo.GetUsersAsync();
+
+var book = new BookModel()
+{
+    AssignedTo = users.First(),
+    Title = "Mow the Lawn",
+    FrequencyInDays = 7
+};
+
+await bookRepo.CreateAsync(book);
+
+var books = await bookRepo.GetBooksAsync();
+var newBook = books.First();
+newBook.LastCompleted = DateTime.UtcNow;
+await bookRepo.CompleteBookWithTransactionAsync(newBook);

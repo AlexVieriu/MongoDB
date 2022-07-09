@@ -3,3 +3,5 @@ global using MongoDB.Bson;
 global using MongoDB.Driver;
 global using Models;
 global using Data;
+global using System;
+global using Repositories;
