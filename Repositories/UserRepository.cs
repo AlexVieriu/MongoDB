@@ -5,6 +5,7 @@ public class UserRepository
     private const string UserCollection = "users";
     private readonly NoSql _noSql;
 
+
     public UserRepository()
     {
         _noSql = new();

@@ -58,17 +58,16 @@ public class BookRepository
 
     public async Task CompleteBookWithTransactionAsync(BookModel book)
     {
-        
-        var client = new MongoClient();
+
+        var client = new MongoClient("mongodb+srv://admin21:cfzVM4xVB5wsrEqQ@atlasmongodb.ereac1d.mongodb.net/local?retryWrites=true&w=majority");
 
         using var session = await client.StartSessionAsync();
 
         session.StartTransaction();
         try
-        {
-            string DatabaseName = "bookdb";
+        {            
+            var db = client.GetDatabase("bookdb");
             
-            var db = client.GetDatabase(DatabaseName);
             var choresCollection = db.GetCollection<BookModel>(BookCollection);
             var filter = Builders<BookModel>.Filter.Eq("Id", book.Id);
             await choresCollection.ReplaceOneAsync(filter, book);
