@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=exXavNOqaVo&t=3427s&ab_channel=IAmTimCorey
+
+(57:22)
+-> connect to atlas
+I can only connect with MongoDb Compass
