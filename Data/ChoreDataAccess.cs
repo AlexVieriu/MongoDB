@@ -3,8 +3,9 @@ namespace Data;
 public class ChoreDataAccess
 {
     // Connect to Atlas : https://cloud.mongodb.com/v2/62c5e14d4cba3542add2e0d6#clusters
-    // private const string ConnectionString = "mongodb://localhost:27017";
-    private const string ConnectionString = "mongodb+srv://admin21:admin2121@atlasmongodb.ereac1d.mongodb.net/?retryWrites=true&w=majority;";
+    private const string ConnectionString = "mongodb://localhost:27017";
+    // pass = cfzVM4xVB5wsrEqQ
+    // private const string ConnectionString = "mongodb+srv://admin21:cfzVM4xVB5wsrEqQ@atlasmongodb.ereac1d.mongodb.net/AtlasMongoDB?retryWrites=true&w=majority";
     private const string DatabaseName = "choredb";
     private const string ChoreCollection = "chore_Chart";
     private const string UserCollection = "users";
