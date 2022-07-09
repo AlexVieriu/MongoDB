@@ -1,4 +1,4 @@
-﻿// --- Example 1 ---
+﻿// // --- Example 1 ---
 // string connectionString = "mongodb://localhost:27017";
 // string databaseName = "simple_db";
 // string collectionName = "people";

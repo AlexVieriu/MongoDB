@@ -66,7 +66,7 @@ public class BookRepository
         session.StartTransaction();
         try
         {
-            string DatabaseName = "choredb";
+            string DatabaseName = "bookdb";
             
             var db = client.GetDatabase(DatabaseName);
             var choresCollection = db.GetCollection<BookModel>(BookCollection);

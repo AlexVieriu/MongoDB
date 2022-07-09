@@ -7,7 +7,7 @@ public class NoSql
     // we need to add a default database(ex:local,admin,config), it not the connection will not work
     private const string ConnectionString = "mongodb+srv://admin21:cfzVM4xVB5wsrEqQ@atlasmongodb.ereac1d.mongodb.net/local?retryWrites=true&w=majority";
     // private const string ConnectionString = "mongodb://localhost:27017";            
-    private const string DatabaseName = "choredb";
+    private const string DatabaseName = "bookdb";
 
     public IMongoCollection<T> ConnectToMongo<T>(in string collection)
     {
